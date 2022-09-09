@@ -53,7 +53,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="POO\Clases\Empleado.cs" />
+    <Compile Include="POO\Clases\EmpleadosVIP.cs" />
+    <Compile Include="POO\Clases\Funciones.cs" />
+    <Compile Include="POO\Clases\IProdExport.cs" />
+    <Compile Include="POO\Clases\Nomina.cs" />
+    <Compile Include="POO\Clases\ProdMaster.cs" />
     <Compile Include="POO\Clases\Producto.cs" />
+    <Compile Include="POO\Clases\Producto_ZF.cs" />
     <Compile Include="POO\Views\Welcome.cs">
       <SubType>Form</SubType>
     </Compile>

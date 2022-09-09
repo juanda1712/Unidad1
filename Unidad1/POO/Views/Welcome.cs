@@ -15,6 +15,8 @@ namespace Unidad1.POO.Views
     {
 
         Empleado OBemp = new Empleado();
+        EmpleadosVIP OBempl_vip = new EmpleadosVIP();
+        Nomina OBNomina = new Nomina();  
         public Welcome()
         {
             InitializeComponent();
@@ -28,11 +30,21 @@ namespace Unidad1.POO.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int cod_empleado= OBemp.CrearEmpleado("Juan","Lopez", 29);            
-            if (OBemp.EliminarEmpleado(cod_empleado) == true)
-            {
-                MessageBox.Show("Exito");
-            }
+
+            int temp_bono = OBemp.bono;
+            OBemp.bono = 500;
+            int cod_empleado= OBemp.CrearEmpleado("Juan","Lopez", 29);
+            //if (OBemp.EliminarEmpleado(cod_empleado) == true)
+            //{
+            //    MessageBox.Show("Exito");
+            //}
+
+            MessageBox.Show(OBemp.Mostrar_Empleado());
+            MessageBox.Show(OBempl_vip.Mostrar_Empleado());
+            OBNomina.GenerarNomina(OBempl_vip);
+
+            var val1 = Funciones.Multiplicar(1, 2);
+
 
         }
     }
