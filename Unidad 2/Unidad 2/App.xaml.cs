@@ -1,4 +1,5 @@
 ﻿using System;
+using Unidad_2.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace Unidad_2
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Controles();
         }
 
         protected override void OnStart()
