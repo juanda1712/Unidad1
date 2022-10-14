@@ -11,7 +11,7 @@ namespace Unidad_2
         {
             InitializeComponent();
 
-            MainPage = new Controles();
+            MainPage = new TabbedPage1();
         }
 
         protected override void OnStart()

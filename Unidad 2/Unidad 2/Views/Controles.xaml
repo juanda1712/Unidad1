@@ -23,6 +23,20 @@
         <Label Text="Label" HorizontalOptions="Center" TextColor="DarkSlateBlue" FontAttributes="Bold" />
         <Picker Title="Select"  TitleColor="Red"/>
         <ProgressBar  ProgressColor="Green"   Progress="0.6"/>
+        <SearchBar Placeholder="Busqueda" TextColor="CornflowerBlue" CancelButtonColor="red" 
+                   TextTransform="Lowercase" FontAttributes="Italic" HorizontalTextAlignment="Center" />
+
+       
+        <Slider Minimum="0" Maximum="100" ThumbColor="CornflowerBlue" MinimumTrackColor="red" MaximumTrackColor="Green" />
+        <Stepper Minimum="0" Maximum="5" Increment="1" BackgroundColor="AliceBlue" />
+        <StackLayout Orientation="Horizontal" Spacing="20">
+         
+            <Label Text="Recordar PW" Padding="10"></Label>
+            <Switch IsToggled="false" OnColor="GreenYellow"  ThumbColor="White"/>
+        </StackLayout>
+
+        <TimePicker  HorizontalOptions="Center" Format="T" TextColor="DarkSlateBlue"/>
+
     </StackLayout >
         
         
