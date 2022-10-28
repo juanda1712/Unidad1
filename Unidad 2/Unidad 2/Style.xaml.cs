@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unidad_2.ViewModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Unidad_2.Views
+namespace Unidad_2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class Style : ResourceDictionary
     {
-        public Login()
+        public Style()
         {
-            InitializeComponent();
-            BindingContext = new LoginViewModel();
+            
         }
     }
 }

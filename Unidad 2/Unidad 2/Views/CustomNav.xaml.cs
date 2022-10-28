@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unidad_2.ViewModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Unidad_2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class CustomNav : NavigationPage
     {
-        public Login()
+        public CustomNav()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+        }
+
+        public CustomNav(Page root) : base(root)
+        {
+            InitializeComponent();
         }
     }
 }

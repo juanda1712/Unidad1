@@ -11,7 +11,7 @@ namespace Unidad_2
         {
             InitializeComponent();
 
-            MainPage = new Recursos();
+            MainPage = new CustomNav(new Login());
         }
 
         protected override void OnStart()

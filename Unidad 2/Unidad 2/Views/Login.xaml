@@ -19,16 +19,19 @@
                 <Entry Placeholder="Usuario"
                        PlaceholderColor="LightGray"
                        TextColor="SlateGray"
+                       Text="{Binding UserTxt, Mode=TwoWay}"
                        ></Entry>
 
                 <Entry Placeholder="Contraseña"
                        PlaceholderColor="LightGray"
                        TextColor="SlateGray"
+                       Text="{Binding PasswordTxt, Mode=TwoWay}"
                        ></Entry>
 
                 <Button Text="Iniciar Sesion"
                         BackgroundColor="White"
                         CornerRadius="20"
+                        Command="{Binding LoginCommand}"
                         TextColor="DeepSkyBlue"
                         FontAttributes="Bold"
                         ></Button>

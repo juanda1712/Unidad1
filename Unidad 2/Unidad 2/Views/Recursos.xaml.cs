@@ -16,5 +16,10 @@ namespace Unidad_2.Views
         {
             InitializeComponent();
         }
+
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }
