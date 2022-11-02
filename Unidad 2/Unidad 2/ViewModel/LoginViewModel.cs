@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Unidad_2.Models;
 using Xamarin.Forms;
 
 namespace Unidad_2.ViewModel
@@ -44,7 +45,9 @@ namespace Unidad_2.ViewModel
         #region Methods
         public async void LoginMethod()
         {
-            if(UserTxt.ToString() == "admin"  && PasswordTxt.ToString() == "1234")
+            string _query = "SELECT * FROM UserModel WHERE UserName = '"+ UserTxt.ToString() + "' AND Password = '"+ PasswordTxt.ToString() + "' ";
+            List<UserModel> ListUser = App.Db.QueryUserModel(_query).Result;
+            if(ListUser.Count>0)
             {
                await Application.Current.MainPage.DisplayAlert("Welcome", "Bienvenido", "Aceptar");
             }
