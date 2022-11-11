@@ -142,4 +142,7 @@
       <Name>Unidad 2</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\usr.png" />
+  </ItemGroup>
 </Project>

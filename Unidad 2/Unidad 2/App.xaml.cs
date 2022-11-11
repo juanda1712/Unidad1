@@ -47,10 +47,17 @@ namespace Unidad_2
 
             //var resul = App.Db.SaveUserModelAsync(user);
 
-
             List<UserModel> Listusers = new List<UserModel>();
 
             Listusers = App.Db.GetUserModel().Result;
+
+            //ContactosModel cont = new ContactosModel();
+            //cont.Nombre = "Jose";
+            //cont.Telefono = "32566221";
+            //cont.Imagen = "usr.png";
+            //var result = App.Db.SaveModelAsync<ContactosModel>(cont, true);
+
+            List<ContactosModel> ListContact = Db.GetTableModel<ContactosModel>().Result;
 
         }
 

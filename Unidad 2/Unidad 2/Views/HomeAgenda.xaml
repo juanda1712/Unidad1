@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Unidad_2.Views.HomeAgenda">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView  x:Name="ListVAgenda" 
+                       ItemsSource="{Binding ListViewSourceObj}"
+                       IsPullToRefreshEnabled="False"
+                       SeparatorColor="LightSlateGray"
+                       HasUnevenRows="True"
+                       ItemSelected="ListVAgenda_ItemSelected"
+                       >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Column="0" Grid.Row="0" 
+                                             Orientation="Horizontal" HorizontalOptions="Center">
+
+                                    <Image WidthRequest="50" Source="{Binding Imagen}" ></Image>
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="1" Grid.Row="0" 
+                                             VerticalOptions="Center" Spacing="3" Orientation="Vertical">
+
+                                    <Label  Text="{Binding Nombre}" FontSize="14" ></Label>
+                                    <Label  Text="{Binding Telefono}" FontSize="14" ></Label>
+                                </StackLayout>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Button Text="Nuevo Contacto"  Clicked="Button_Clicked"  Style="{StaticResource BtnAceptar}" ></Button>
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
