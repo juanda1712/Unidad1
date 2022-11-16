@@ -1,10 +1,14 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Plugin.Messaging;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Windows.Input;
 using Unidad_2.Models;
+using Unidad_2.Views;
+using Xamarin.Forms;
 
 namespace Unidad_2.ViewModel
 {
@@ -87,15 +91,67 @@ namespace Unidad_2.ViewModel
 
         }
 
+        public ICommand SmsCommand
+        {
+            get
+            {
+                return new RelayCommand(SmsContactMethod);
+            }
+
+        }
+
         #endregion
 
         #region Method
         public async void RegisterContactMethod()
         { }
+
+        public async void SmsContactMethod()
+        {
+            var sms = CrossMessaging.Current.SmsMessenger;
+            if(sms.CanSendSms)
+            {
+                sms.SendSms(numero, "Sms Xamarin App");
+                await PopupNavigation.Instance.PopAsync(true);
+            }
+        
+        }
         public async void UpdateContactMethod()
-        { }
+        {
+            ContactosModel ObjCont = new ContactosModel();
+            ObjCont.Nombre = nombre;
+            ObjCont.ContactID = id;
+            ObjCont.Telefono = numero;
+            ObjCont.Imagen = imagen;
+
+
+
+            await App.Db.SaveModelAsync<ContactosModel>(ObjCont, false);
+            await Application.Current.MainPage.DisplayAlert("Ok", "Actualización Exitosa", "Ok");
+            await Application.Current.MainPage.Navigation.PushAsync(new HomeAgenda());
+            await PopupNavigation.Instance.PopAsync(true);
+                
+
+
+
+
+        }
         public async void DeleteContactMethod()
-        { }
+        {
+            ContactosModel ObjCont = new ContactosModel();
+            ObjCont.Nombre = nombre;
+            ObjCont.ContactID = id;
+            ObjCont.Telefono = numero;
+            ObjCont.Imagen = imagen;
+
+
+
+            await App.Db.DeleteModelAsync<ContactosModel>(ObjCont);
+            await Application.Current.MainPage.DisplayAlert("Ok", "Eliminación Exitosa", "Ok");
+            await Application.Current.MainPage.Navigation.PushAsync(new HomeAgenda());
+            await PopupNavigation.Instance.PopAsync(true);
+
+        }
 
         public async void LoadContactMethod()
         {
@@ -111,6 +167,16 @@ namespace Unidad_2.ViewModel
         {
             LoadContactMethod();
         }
-    
+
+        public ContactosViewModel(ContactosModel item)
+        {
+            NombreTxt = item.Nombre;
+            NumeroTxt = item.Telefono;
+            IDTxt = item.ContactID;
+            ImgTxt = item.Imagen;
+           
+        }
+
+
     }
 }
