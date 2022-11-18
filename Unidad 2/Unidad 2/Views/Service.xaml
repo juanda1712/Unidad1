@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Unidad_2.Views.Service">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Margin="30" Spacing="2">
+
+
+                <StackLayout Spacing="5">
+                    <Label Text="Nombre"></Label>
+                    <Entry Text="{Binding NombreTxt}" Style="{StaticResource EtGeneral}"
+                           Placeholder="Ingrese el nombre"
+                           ></Entry>
+                </StackLayout>
+
+
+                <StackLayout Spacing="5">
+                    <Label Text="Telefono"></Label>
+                    <Entry Text="{Binding NumeroTxt}" Style="{StaticResource EtGeneral}"
+                           Placeholder="Ingrese el Telefono"
+                           ></Entry>
+                </StackLayout>
+
+
+                <StackLayout Spacing="5">
+                    <Button Text="Consultar" Command="{Binding GetData}"   Style="{StaticResource BtnAceptar}" ></Button>
+                    <Button Text="Guardar"   Command="{Binding PostData}"  Style="{StaticResource BtnAceptar}" ></Button>
+
+                </StackLayout>
+                
+            </StackLayout>
+            
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

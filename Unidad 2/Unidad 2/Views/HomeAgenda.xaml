@@ -47,6 +47,7 @@
 
 
             <Button Text="Nuevo Contacto"  Clicked="Button_Clicked"  Style="{StaticResource BtnAceptar}" ></Button>
+            <Button Text="Maestro Detalle"  Clicked="Button_Clicked_1"  Style="{StaticResource BtnAceptar}" ></Button>
 
         </StackLayout>
 

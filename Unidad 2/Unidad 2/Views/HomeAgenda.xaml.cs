@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Rg.Plugins.Popup.Services;
 using Unidad_2.Views.PopUp;
+using Unidad_2.Views.MaestroDetalle;
 using Unidad_2.Models;
 
 namespace Unidad_2.Views
@@ -32,6 +33,11 @@ namespace Unidad_2.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
            await Navigation.PushAsync(new NewContact(), true);
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MasterDetail(), true);
         }
     }
 }
